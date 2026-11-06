@@ -1,0 +1,14 @@
+<resources>
+  <color name="dw_bg">#F6F1E8</color>
+  <color name="dw_surface">#FFFDFC</color>
+  <color name="dw_surface_alt">#F7E8D6</color>
+  <color name="dw_surface_mint">#E2F2EE</color>
+  <color name="dw_primary">#1D7C7A</color>
+  <color name="dw_primary_dark">#145D5B</color>
+  <color name="dw_accent">#D66C45</color>
+  <color name="dw_text">#173331</color>
+  <color name="dw_muted">#5D7472</color>
+  <color name="dw_border">#E6D8C6</color>
+  <color name="dw_warning">#8A4B34</color>
+  <color name="dw_white">#FFFFFF</color>
+</resources>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1d7c7a">
+  <title>DrinkWater Ritual</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="hero">
+      <p class="eyebrow">Hydratacia na mieru</p>
+      <h1>DrinkWater Ritual</h1>
+      <p class="hero-copy">
+        Mobilna appka na pitny rezim s inteligentnym odporucanim podla tela, rytmu dna
+        a ajurvedskeho profilu.
+      </p>
+      <div class="hero-stats">
+        <div class="stat-card">
+          <span class="stat-label">Dnes vypite</span>
+          <strong id="consumedToday">0 ml</strong>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Denný ciel</span>
+          <strong id="goalToday">0 ml</strong>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Dalsia pripomienka</span>
+          <strong id="nextReminder">Nenastavena</strong>
+        </div>
+      </div>
+    </header>
+
+    <main class="content">
+      <section class="panel">
+        <div class="section-heading">
+          <h2>Rychly zapis vody</h2>
+          <p>Jednym tuknutim si zapis, kolko si vypil.</p>
+        </div>
+        <div class="quick-actions">
+          <button class="water-btn" data-amount="150">+150 ml</button>
+          <button class="water-btn" data-amount="250">+250 ml</button>
+          <button class="water-btn" data-amount="330">+330 ml</button>
+          <button class="water-btn" data-amount="500">+500 ml</button>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-bar">
+            <div id="progressFill" class="progress-fill"></div>
+          </div>
+          <p id="progressText" class="progress-text">0 % denneho ciela</p>
+        </div>
+      </section>
+
+      <section class="panel panel-grid">
+        <article>
+          <div class="section-heading">
+            <h2>Manualny rezim</h2>
+            <p>Nastavenie pre ludi, ktori uz vedia, co im funguje.</p>
+          </div>
+          <form id="manualForm" class="stack">
+            <label>
+              Denny ciel vody (ml)
+              <input type="number" id="manualGoal" min="500" step="50" value="2200">
+            </label>
+            <label>
+              Pocet pripomienok denne
+              <input type="number" id="manualReminders" min="1" max="24" value="8">
+            </label>
+            <label>
+              Zaciatok rezimu
+              <input type="time" id="manualStart" value="08:00">
+            </label>
+            <label>
+              Koniec rezimu
+              <input type="time" id="manualEnd" value="20:00">
+            </label>
+            <button type="submit" class="primary-btn">Ulozit manualny rezim</button>
+          </form>
+        </article>
+
+        <article>
+          <div class="section-heading">
+            <h2>Odporucany rezim</h2>
+            <p>Dotaznik vytvori navrh podla konstitucie, aktivity a prostredia.</p>
+          </div>
+          <form id="quizForm" class="stack">
+            <label>
+              Meno
+              <input type="text" id="name" placeholder="Napriklad Jana">
+            </label>
+            <label>
+              Datum narodenia
+              <input type="date" id="birthDate">
+            </label>
+            <label>
+              Pohlavie
+              <select id="sex">
+                <option value="female">Zena</option>
+                <option value="male">Muz</option>
+                <option value="other">Inak / nechcem uviest</option>
+              </select>
+            </label>
+            <label>
+              Hmotnost (kg)
+              <input type="number" id="weight" min="30" max="250" step="0.1" value="70">
+            </label>
+            <label>
+              Vyska (cm)
+              <input type="number" id="height" min="120" max="230" step="1" value="170">
+            </label>
+            <label>
+              Uroven aktivity
+              <select id="activity">
+                <option value="low">Nizka</option>
+                <option value="medium" selected>Stredna</option>
+                <option value="high">Vysoka</option>
+              </select>
+            </label>
+            <label>
+              Klima / prostredie
+              <select id="climate">
+                <option value="cool">Chladne</option>
+                <option value="temperate" selected>Mierne</option>
+                <option value="hot">Teple / horuce</option>
+              </select>
+            </label>
+            <label>
+              Ako sa najcastejsie citis?
+              <select id="bodySignal">
+                <option value="dry">Skor suchy, citlivy, rychly</option>
+                <option value="balanced" selected>Vyrovnany</option>
+                <option value="heated">Skor horuci, intenzivny, hladny</option>
+                <option value="heavy">Skor tazsi, pokojny, pomalsi</option>
+              </select>
+            </label>
+            <label>
+              Prevladajuca dosha
+              <select id="dosha">
+                <option value="vata">Vata</option>
+                <option value="pitta">Pitta</option>
+                <option value="kapha">Kapha</option>
+                <option value="mixed" selected>Zmiesany profil</option>
+              </select>
+            </label>
+            <button type="submit" class="primary-btn">Vypocitat odporucanie</button>
+          </form>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="section-heading">
+          <h2>Tvoje odporucanie</h2>
+          <p>Wellness odhad. Pri zdravotnych obmedzeniach je dolezity lekar alebo nutricny odbornik.</p>
+        </div>
+        <div class="recommendation-card">
+          <div>
+            <span class="result-label">Odporucany denný ciel</span>
+            <strong id="recommendedGoal">2200 ml</strong>
+          </div>
+          <div>
+            <span class="result-label">Odporucany pocet davok</span>
+            <strong id="recommendedSchedule">8x denne</strong>
+          </div>
+          <div>
+            <span class="result-label">Elementovy profil</span>
+            <strong id="elementProfile">Vzduch 20 % · Ohen 20 % · Voda 20 % · Zem 20 % · Priestor 20 %</strong>
+          </div>
+        </div>
+        <div id="recommendationNotes" class="notes"></div>
+      </section>
+
+      <section class="panel">
+        <div class="section-heading">
+          <h2>Upozornenia</h2>
+          <p>Appka vie posielat lokalne upozornenia pocas otvorenej session v prehliadaci.</p>
+        </div>
+        <div class="notification-row">
+          <button id="enableNotifications" class="secondary-btn">Povolit upozornenia</button>
+          <button id="startReminders" class="primary-btn">Spustit pripomienky</button>
+          <button id="stopReminders" class="ghost-btn">Zastavit</button>
+        </div>
+        <ul id="scheduleList" class="schedule-list"></ul>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

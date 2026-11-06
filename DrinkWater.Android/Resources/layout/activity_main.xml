@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_screen"
+    android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:background="@drawable/card_hero"
+            android:orientation="vertical"
+            android:padding="22dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hydratacia na mieru"
+                android:textAllCaps="true"
+                android:textColor="@color/dw_accent"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="DrinkWater Ritual"
+                android:textColor="@color/dw_text"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:lineSpacingExtra="3dp"
+                android:text="Osobny pitny rezim, adaptivne pripomienky a vysvetlene odporucania v jednej Android appke."
+                android:textColor="@color/dw_muted" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:orientation="horizontal"
+                android:weightSum="3">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/card_surface"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dnes vypite"
+                        android:textColor="@color/dw_muted"
+                        android:textSize="12sp" />
+                    <TextView
+                        android:id="@+id/consumedText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="0 ml"
+                        android:textColor="@color/dw_primary"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/card_surface"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Denny ciel"
+                        android:textColor="@color/dw_muted"
+                        android:textSize="12sp" />
+                    <TextView
+                        android:id="@+id/goalText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="2200 ml"
+                        android:textColor="@color/dw_text"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/card_surface"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dalsia"
+                        android:textColor="@color/dw_muted"
+                        android:textSize="12sp" />
+                    <TextView
+                        android:id="@+id/nextReminderText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Nenastavena"
+                        android:textColor="@color/dw_text"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="14dp"
+                android:layout_marginTop="18dp"
+                android:max="100"
+                android:progress="0"
+                android:progressBackgroundTint="#DDE8E4"
+                android:progressTint="@color/dw_primary" />
+            <TextView
+                android:id="@+id/progressText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="0 % denneho ciela"
+                android:textColor="@color/dw_muted" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:background="@drawable/card_surface"
+            android:orientation="vertical"
+            android:padding="18dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rychly zapis vody"
+                android:textColor="@color/dw_text"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Zapis si vodu jednym tuknutim."
+                android:textColor="@color/dw_muted" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+                <Button
+                    android:id="@+id/add150Button"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_primary"
+                    android:text="+150 ml"
+                    android:textAllCaps="false"
+                    android:textColor="@color/dw_white" />
+                <Button
+                    android:id="@+id/add250Button"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_primary"
+                    android:text="+250 ml"
+                    android:textAllCaps="false"
+                    android:textColor="@color/dw_white" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+                <Button
+                    android:id="@+id/add330Button"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_primary"
+                    android:text="+330 ml"
+                    android:textAllCaps="false"
+                    android:textColor="@color/dw_white" />
+                <Button
+                    android:id="@+id/add500Button"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_primary"
+                    android:text="+500 ml"
+                    android:textAllCaps="false"
+                    android:textColor="@color/dw_white" />
+            </LinearLayout>
+            <Button
+                android:id="@+id/resetTodayButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/btn_ghost"
+                android:text="Reset dnesneho progresu"
+                android:textAllCaps="false"
+                android:textColor="@color/dw_text" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:background="@drawable/card_surface"
+            android:orientation="vertical"
+            android:padding="18dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Statistiky a historia"
+                android:textColor="@color/dw_text"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+                <TextView
+                    android:id="@+id/stats7DayText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/card_primary_soft"
+                    android:padding="16dp"
+                    android:text="7-dnova statistika"
+                    android:textColor="@color/dw_text" />
+                <TextView
+                    android:id="@+id/stats30DayText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/card_accent_soft"
+                    android:padding="16dp"
+                    android:text="30-dnova statistika"
+                    android:textColor="@color/dw_text" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/chart7DayText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/card_surface"
+                android:padding="14dp"
+                android:text="Mini graf 7 dni"
+                android:textColor="@color/dw_text"
+                android:typeface="monospace" />
+            <TextView
+                android:id="@+id/chart30DayText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/card_surface"
+                android:padding="14dp"
+                android:text="Mini graf 30 dni"
+                android:textColor="@color/dw_text"
+                android:typeface="monospace" />
+            <TextView
+                android:id="@+id/streakTrendText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/card_surface"
+                android:padding="14dp"
+                android:text="Streak a trend"
+                android:textColor="@color/dw_text" />
+            <TextView
+                android:id="@+id/dayPartText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/card_surface"
+                android:padding="14dp"
+                android:text="Rozdelenie pitia"
+                android:textColor="@color/dw_text" />
+            <Button
+                android:id="@+id/openInsightsButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/btn_secondary"
+                android:text="Otvorit Insights"
+                android:textAllCaps="false"
+                android:textColor="@color/dw_text" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="Posledne dni"
+                android:textColor="@color/dw_text"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/historyPreviewText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/card_surface"
+                android:padding="14dp"
+                android:text="Historia pitia"
+                android:textColor="@color/dw_muted" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:background="@drawable/card_surface"
+            android:orientation="vertical"
+            android:padding="18dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Manualny rezim"
+                android:textColor="@color/dw_text"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/manualGoalInput"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/field_bg"
+                android:hint="Denny ciel vody v ml"
+                android:inputType="number"
+                android:paddingHorizontal="14dp" />
+            <Button
+                android:id="@+id/saveManualButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/btn_secondary"
+                android:text="Ulozit manualny rezim"
+                android:textAllCaps="false"
+                android:textColor="@color/dw_text" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:background="@drawable/card_surface"
+            android:orientation="vertical"
+            android:padding="18dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Odporucany rezim"
+                android:textColor="@color/dw_text"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+            <EditText android:id="@+id/nameInput" android:layout_width="match_parent" android:layout_height="50dp" android:layout_marginTop="12dp" android:background="@drawable/field_bg" android:hint="Meno" android:paddingHorizontal="14dp" />
+            <EditText android:id="@+id/birthDateInput" android:layout_width="match_parent" android:layout_height="50dp" android:layout_marginTop="10dp" android:background="@drawable/field_bg" android:hint="Datum narodenia, napr. 1990-05-12" android:paddingHorizontal="14dp" />
+            <Spinner android:id="@+id/sexSpinner" android:layout_width="match_parent" android:layout_height="50dp" android:layout_marginTop="10dp" android:background="@drawable/field_bg" />
+            <EditText android:id="@+id/weightInput" android:layout_width="match_parent" android:layout_height="50dp" android:layout_marginTop="10dp" android:background="@drawable/field_bg" android:hint="Hmotnost v kg" android:inputType="numberDecimal" android:paddingHorizontal="14dp" />
+            <EditText android:id="@+id/heightInput" android:layout_width="match_parent" android:layout_height="50dp" android:layout_marginTop="10dp" android:background="@drawable/field_bg" android:hint="Vyska v cm" android:inputType="numberDecimal" android:paddingHorizontal="14dp" />
+            <EditText android:id="@+id/workoutMinutesInput" android:layout_width="match_parent" android:layout_height="50dp" android:layout_marginTop="10dp" android:background="@drawable/field_bg" android:hint="Trening alebo aktivny pohyb denne v minutach" android:inputType="number" android:paddingHorizontal="14dp" />
+            <Spinner android:id="@+id/activitySpinner" android:layout_width="match_parent" android:layout_height="50dp" android:layout_marginTop="10dp" android:background="@drawable/field_bg" />
+            <Spinner android:id="@+id/climateSpinner" android:layout_width="match_parent" android:layout_height="50dp" android:layout_marginTop="10dp" android:background="@drawable/field_bg" />
+            <Spinner android:id="@+id/sweatSpinner" android:layout_width="match_parent" android:layout_height="50dp" android:layout_marginTop="10dp" android:background="@drawable/field_bg" />
+            <EditText android:id="@+id/coffeeCupsInput" android:layout_width="match_parent" android:layout_height="50dp" android:layout_marginTop="10dp" android:background="@drawable/field_bg" android:hint="Kava alebo energeticke napoje za den" android:inputType="number" android:paddingHorizontal="14dp" />
+            <EditText android:id="@+id/alcoholServingsInput" android:layout_width="match_parent" android:layout_height="50dp" android:layout_marginTop="10dp" android:background="@drawable/field_bg" android:hint="Alkoholicke drinky za den" android:inputType="number" android:paddingHorizontal="14dp" />
+            <Spinner android:id="@+id/bodySignalSpinner" android:layout_width="match_parent" android:layout_height="50dp" android:layout_marginTop="10dp" android:background="@drawable/field_bg" />
+            <Spinner android:id="@+id/doshaSpinner" android:layout_width="match_parent" android:layout_height="50dp" android:layout_marginTop="10dp" android:background="@drawable/field_bg" />
+            <CheckBox android:id="@+id/pregnancyCheckbox" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="Tehotenstvo alebo dojcenie" android:textColor="@color/dw_text" />
+            <CheckBox android:id="@+id/kidneyCheckbox" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Ochorenie obliciek" android:textColor="@color/dw_text" />
+            <CheckBox android:id="@+id/heartCheckbox" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Ochorenie srdca alebo opuchy" android:textColor="@color/dw_text" />
+            <CheckBox android:id="@+id/fluidRestrictionCheckbox" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Mam lekarom obmedzene tekutiny" android:textColor="@color/dw_text" />
+            <Button
+                android:id="@+id/calculateButton"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/btn_primary"
+                android:text="Vypocitat odporucanie"
+                android:textAllCaps="false"
+                android:textColor="@color/dw_white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:background="@drawable/card_surface"
+            android:orientation="vertical"
+            android:padding="18dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tvoje odporucanie"
+                android:textColor="@color/dw_text"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+            <TextView android:id="@+id/recommendedGoalText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="2200 ml" android:textColor="@color/dw_primary" android:textSize="24sp" android:textStyle="bold" />
+            <TextView android:id="@+id/recommendedScheduleText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="8x denne" android:textColor="@color/dw_text" />
+            <TextView android:id="@+id/elementProfileText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="Elementovy profil" android:textColor="@color/dw_muted" />
+            <TextView android:id="@+id/notesText" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:background="@drawable/card_primary_soft" android:padding="14dp" android:text="Poznamky k odporucaniu" android:textColor="@color/dw_muted" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="Preco prave tento ciel" android:textColor="@color/dw_text" android:textStyle="bold" />
+            <TextView android:id="@+id/breakdownText" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:background="@drawable/card_surface" android:padding="14dp" android:text="Rozpis faktorov" android:textColor="@color/dw_text" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="Bezpecnostne upozornenia" android:textColor="@color/dw_text" android:textStyle="bold" />
+            <TextView android:id="@+id/safetyText" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:background="@drawable/card_accent_soft" android:padding="14dp" android:text="Bezpecnostny status" android:textColor="@color/dw_warning" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card_surface"
+            android:orientation="vertical"
+            android:padding="18dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Upozornenia"
+                android:textColor="@color/dw_text"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+            <Spinner android:id="@+id/reminderModeSpinner" android:layout_width="match_parent" android:layout_height="50dp" android:layout_marginTop="12dp" android:background="@drawable/field_bg" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Vyber rezim a uloz nastavenie. Po splneni denneho ciela sa upozornenia nezobrazuju." android:textColor="@color/dw_muted" />
+            <EditText android:id="@+id/eveningTimeInput" android:layout_width="match_parent" android:layout_height="50dp" android:layout_marginTop="10dp" android:background="@drawable/field_bg" android:hint="Vecerne upozornenie, napr. 20:00" android:paddingHorizontal="14dp" />
+            <EditText
+                android:id="@+id/manualRemindersInput"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/field_bg"
+                android:hint="Pocet pripomienok denne"
+                android:inputType="number"
+                android:paddingHorizontal="14dp" />
+            <EditText
+                android:id="@+id/manualStartInput"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/field_bg"
+                android:hint="Zaciatok rezimu, napr. 08:00"
+                android:paddingHorizontal="14dp" />
+            <EditText
+                android:id="@+id/manualEndInput"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/field_bg"
+                android:hint="Koniec rezimu, napr. 20:00"
+                android:paddingHorizontal="14dp" />
+            <Button android:id="@+id/enableNotificationsButton" android:layout_width="match_parent" android:layout_height="50dp" android:layout_marginTop="12dp" android:background="@drawable/btn_secondary" android:text="Povolit upozornenia" android:textAllCaps="false" android:textColor="@color/dw_text" />
+            <Button android:id="@+id/scheduleRemindersButton" android:layout_width="match_parent" android:layout_height="52dp" android:layout_marginTop="10dp" android:background="@drawable/btn_primary" android:text="Ulozit nastavenie upozorneni" android:textAllCaps="false" android:textColor="@color/dw_white" />
+            <TextView android:id="@+id/reminderStrategyText" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:background="@drawable/card_accent_soft" android:padding="14dp" android:text="Strategia pripomienok" android:textColor="@color/dw_warning" />
+            <TextView android:id="@+id/scheduleText" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:background="@drawable/card_surface" android:padding="14dp" android:text="Harmonogram" android:textColor="@color/dw_muted" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

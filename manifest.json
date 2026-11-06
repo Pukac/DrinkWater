@@ -1,0 +1,23 @@
+{
+  "name": "DrinkWater Ritual",
+  "short_name": "DrinkWater",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f7f1e8",
+  "theme_color": "#1d7c7a",
+  "description": "Mobilna wellness appka pre hydrataciu, pitny rezim a personalizovane pripomienky.",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

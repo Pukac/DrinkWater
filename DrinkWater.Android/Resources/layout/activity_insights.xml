@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_screen"
+    android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card_hero"
+            android:orientation="vertical"
+            android:padding="22dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hydration intelligence"
+                android:textAllCaps="true"
+                android:textColor="@color/dw_accent"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/insightHeadlineText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Insights"
+                android:textColor="@color/dw_text"
+                android:textStyle="bold"
+                android:textSize="30sp" />
+            <TextView
+                android:id="@+id/insightSummaryText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:lineSpacingExtra="3dp"
+                android:text="Smart odporucanie"
+                android:textColor="@color/dw_muted" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                android:id="@+id/card7Text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/card_primary_soft"
+                android:padding="18dp"
+                android:text="7 dni"
+                android:textColor="@color/dw_text" />
+            <TextView
+                android:id="@+id/card30Text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/card_accent_soft"
+                android:padding="18dp"
+                android:text="30 dni"
+                android:textColor="@color/dw_text" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/card_surface"
+            android:orientation="vertical"
+            android:padding="18dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Graf 7 dni"
+                android:textColor="@color/dw_text"
+                android:textStyle="bold" />
+            <DrinkWater.Android.DailyBarChartView
+                android:id="@+id/chart7View"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginTop="10dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/card_surface"
+            android:orientation="vertical"
+            android:padding="18dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Graf 30 dni"
+                android:textColor="@color/dw_text"
+                android:textStyle="bold" />
+            <DrinkWater.Android.DailyBarChartView
+                android:id="@+id/chart30View"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginTop="10dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/trendText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/card_surface"
+            android:padding="18dp"
+            android:text="Trend"
+            android:textColor="@color/dw_text" />
+
+        <TextView
+            android:id="@+id/dayPartInsightText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/card_surface"
+            android:padding="18dp"
+            android:text="Rozdelenie dna"
+            android:textColor="@color/dw_text" />
+
+        <Button
+            android:id="@+id/closeInsightsButton"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/btn_primary"
+            android:text="Zavriet Insights"
+            android:textAllCaps="false"
+            android:textColor="@color/dw_white" />
+    </LinearLayout>
+</ScrollView>

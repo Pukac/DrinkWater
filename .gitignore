@@ -1,0 +1,24 @@
+# Local SDK and package caches
+.dotnet/
+.nuget/
+# .NET / Android build output
+**/bin/
+**/obj/
+.vs/
+*.user
+*.suo
+*.apk
+*.aab
+# Local credentials and signing keys
+.env
+.env.*
+!.env.example
+*.keystore
+*.jks
+*.pfx
+*.p12
+# Local editor and OS files
+.idea/
+.vscode/
+Thumbs.db
+.DS_Store
